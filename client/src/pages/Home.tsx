@@ -208,34 +208,34 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-col gap-6">
             {keys.map((key) => (
               <div
                 key={key.id}
                 onClick={() => setSelectedKey(key)}
                 className="group relative cursor-pointer"
               >
-                <div className="mistree-card relative flex h-80 flex-col justify-end overflow-hidden rounded-[1.4rem] border border-white/10 bg-card/80 p-5 transition-all duration-500 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10">
+                <div className="mistree-card relative flex min-h-[72vh] flex-col justify-end overflow-hidden rounded-[1.4rem] border border-white/10 bg-card/80 p-6 md:min-h-[82vh] md:p-8 transition-all duration-500 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10">
                   <img
                     src={key.image}
                     alt={key.title}
                     className="absolute inset-0 h-full w-full scale-100 object-cover opacity-35 transition-all duration-500 group-hover:scale-105 group-hover:opacity-60"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/25" />
-                  <div className="absolute inset-x-5 top-5 flex items-center justify-between text-[0.65rem] uppercase tracking-[0.28em] text-foreground/55">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/10" />
+                  <div className="absolute inset-x-6 top-6 flex items-center justify-between text-[0.65rem] uppercase tracking-[0.28em] text-foreground/55 md:inset-x-8 md:top-8">
                     <span style={bodyFont}>Artifact</span>
                     <span style={bodyFont}>0{key.order}</span>
                   </div>
 
-                  <div className="relative z-10">
-                    <h3 className="mb-1 text-xl font-semibold" style={displayFont}>
+                  <div className="relative z-10 max-w-3xl">
+                    <h3 className="mb-2 text-3xl font-semibold md:text-5xl" style={displayFont}>
                       {key.title}
                     </h3>
-                    <p className="mb-3 text-sm text-foreground/60" style={bodyFont}>
+                    <p className="mb-5 text-base text-foreground/60 md:text-lg" style={bodyFont}>
                       {key.subtitle}
                     </p>
                     <p
-                      className="line-clamp-4 text-sm leading-relaxed text-foreground/75"
+                      className="max-w-2xl text-base leading-relaxed text-foreground/75 md:text-lg"
                       style={bodyFont}
                     >
                       {key.summary}
@@ -344,12 +344,15 @@ export default function Home() {
       )}
 
       <div className="relative w-full border-t border-border/50 bg-card px-4 py-12">
-        <div className="mx-auto max-w-7xl text-center">
+        <div className="mx-auto max-w-7xl text-left">
           <p className="mb-2 text-sm text-foreground/60" style={bodyFont}>
             Mistreeous Reflections
           </p>
           <p className="text-xs text-foreground/40" style={bodyFont}>
             Provisional language for pattern, fracture, and reorientation.
+          </p>
+          <p className="mt-4 text-sm text-foreground/60" style={bodyFont}>
+            michaelmistree@mistree.space
           </p>
         </div>
       </div>
