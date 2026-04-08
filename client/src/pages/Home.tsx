@@ -181,10 +181,16 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mistree-honeycomb -mt-[30vh] h-[60vh] w-full" />
-
-      <div className="relative w-full overflow-hidden bg-background px-4 py-20">
-        <div className="mistree-transition-geometry absolute inset-x-0 top-[-8rem] flex justify-center opacity-70">
+      <div className="pointer-events-none relative -mt-[25vh] h-[50vh] w-full" style={{ maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)' }}>
+        <svg className="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="honeycomb" x="0" y="0" width="60" height="34.64" patternUnits="userSpaceOnUse">
+              <path d="M0,17.32 L10,17.32 L20,0 L40,0 L50,17.32 L60,17.32 M10,17.32 L20,34.64 L40,34.64 L50,17.32" fill="none" stroke="rgba(180,210,255,0.18)" strokeWidth="0.8"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#honeycomb)"/>
+        </svg>
+        <div className="mistree-transition-geometry absolute inset-x-0 bottom-0 flex justify-center opacity-70">
           <div className="mistree-geometry-shell relative h-[28rem] w-[28rem] md:h-[34rem] md:w-[34rem]">
             <div className="mistree-geometry-ring absolute inset-[8%]" />
             <div className="mistree-geometry-ring absolute inset-[20%]" />
@@ -198,6 +204,9 @@ export default function Home() {
             <div className="mistree-geometry-node absolute bottom-[18%] left-1/2" />
           </div>
         </div>
+      </div>
+
+      <div className="relative w-full overflow-hidden bg-background px-4 py-20">
         <div className="mistree-aura mistree-aura-violet absolute top-24 -left-24 h-80 w-80 rounded-full blur-3xl" />
         <div className="mistree-aura mistree-aura-cyan absolute right-0 bottom-16 h-72 w-72 rounded-full blur-3xl" />
         <div className="mx-auto max-w-7xl">
