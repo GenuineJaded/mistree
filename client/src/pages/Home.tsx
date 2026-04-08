@@ -314,7 +314,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-16 max-w-3xl space-y-4 text-center">
             <h2 className="text-4xl font-bold md:text-5xl" style={displayFont}>
-              Seven Reflective Scaffolds
+              Se7en Reflective Scaffolds
             </h2>
             <p className="text-lg leading-relaxed text-foreground/70" style={bodyFont}>
               Each piece is an artifact, not an instruction set.
