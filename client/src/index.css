@@ -332,8 +332,8 @@
   }
 
   .mistree-honeycomb {
-    --hc: rgba(200, 220, 255, 0.09);
-    --hc2: rgba(200, 220, 255, 0.05);
+    --hc: rgba(200, 220, 255, 0.18);
+    --hc2: rgba(200, 220, 255, 0.10);
     pointer-events: none;
     background:
       linear-gradient(30deg, var(--hc) 12%, transparent 12.5%, transparent 87%, var(--hc) 87.5%, var(--hc)),

@@ -181,7 +181,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mistree-honeycomb h-40 w-full md:h-56" />
+      <div className="mistree-honeycomb -mt-[30vh] h-[60vh] w-full" />
 
       <div className="relative w-full overflow-hidden bg-background px-4 py-20">
         <div className="mistree-transition-geometry absolute inset-x-0 top-[-8rem] flex justify-center opacity-70">
