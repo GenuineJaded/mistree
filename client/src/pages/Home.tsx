@@ -60,14 +60,14 @@ function ParticleField() {
     resize();
     window.addEventListener("resize", resize);
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 80; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: Math.random() * 1.5 + 0.5,
-        o: Math.random() * 0.12 + 0.03,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 0.8,
+        o: Math.random() * 0.2 + 0.08,
       });
     }
 
