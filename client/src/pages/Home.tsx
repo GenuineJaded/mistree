@@ -169,7 +169,7 @@ const keys: Key[] = [
       "Projection is feedback with no breath. Misattunement is echo without echoer.",
     ],
     image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663072374046/nAKKHctLgiWsZds5pNMhEc/mistree_key_shard_4-Dxnh88sc89bpdjFjDGhape.webp",
+      "https://cryptic-syndicate.com/wp-content/uploads/2026/04/pnm.webp",
     order: 4,
   },
   {
@@ -269,7 +269,7 @@ export default function Home() {
             className="mb-6 text-xl font-light text-foreground/80 md:text-2xl"
             style={displayFont}
           >
-            se7en private instruments for navigating a difficult world
+            Se7en private instruments for navigating a difficult world
           </p>
           <p
             className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground/60 md:text-base"
@@ -492,7 +492,7 @@ export default function Home() {
               Mistreeous Reflections
             </p>
             <p className="text-xs text-foreground/40" style={bodyFont}>
-              Articulated fractal thought forms of authenticity for repair, pattern, and reorientation.
+              Private navigational instruments for pattern, repair, and reorientation.
             </p>
           </div>
           <p className="text-sm text-foreground/60 md:text-right" style={bodyFont}>
