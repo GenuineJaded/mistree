@@ -269,7 +269,7 @@ export default function Home() {
             className="mb-6 text-xl font-light text-foreground/80 md:text-2xl"
             style={displayFont}
           >
-            Seven private instruments for navigating a difficult world
+            se7en private instruments for navigating a difficult world
           </p>
           <p
             className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground/60 md:text-base"
