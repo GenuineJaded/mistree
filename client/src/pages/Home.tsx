@@ -492,7 +492,7 @@ export default function Home() {
               Mistreeous Reflections
             </p>
             <p className="text-xs text-foreground/40" style={bodyFont}>
-              Language patterns of authenticity for repair, pattern, and reorientation.
+              Articulated fractal thought forms of authenticity for repair, pattern, and reorientation.
             </p>
           </div>
           <p className="text-sm text-foreground/60 md:text-right" style={bodyFont}>
