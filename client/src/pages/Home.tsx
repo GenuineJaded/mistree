@@ -275,9 +275,10 @@ export default function Home() {
             className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground/60 md:text-base"
             style={bodyFont}
           >
-            These reflections are not a final outline of reality. They are
-            provisional structures built to notice pattern, hold paradox, and keep
-            moving when the world becomes hard to read.
+            These reflections are not a final outline of reality.
+            <br />
+            They are provisional structures built to notice pattern, hold paradox,
+            and keep moving when the world becomes hard to read.
           </p>
         </div>
       </div>
@@ -316,9 +317,10 @@ export default function Home() {
               Seven Reflective Scaffolds
             </h2>
             <p className="text-lg leading-relaxed text-foreground/70" style={bodyFont}>
-              Each piece is an artifact, not an instruction set. They helped carry
-              orientation, pressure, rupture, and repair without pretending to
-              explain everything.
+              Each piece is an artifact, not an instruction set.
+              <br />
+              They helped carry orientation, pressure, rupture, and repair
+              without pretending to explain everything.
             </p>
             <p
               className="text-sm leading-relaxed text-foreground/50 md:text-base"
