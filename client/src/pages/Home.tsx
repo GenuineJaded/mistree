@@ -231,6 +231,14 @@ export default function Home() {
   const displayFont = { fontFamily: '"Playfair Display", serif' };
   const bodyFont = { fontFamily: '"Lato", sans-serif' };
 
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedKey(null);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <ParticleField />
@@ -364,8 +372,8 @@ export default function Home() {
       </div>
 
       {selectedKey && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm">
-          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[1.5rem] border border-white/10 bg-card/95 shadow-2xl shadow-accent/20 fade-in-up">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm" onClick={() => setSelectedKey(null)}>
+          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[1.5rem] border border-white/10 bg-card/95 shadow-2xl shadow-accent/20 fade-in-up" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setSelectedKey(null)}
               className="absolute top-4 right-4 z-10 rounded-lg bg-background/60 p-2 transition-colors hover:bg-background"
