@@ -344,14 +344,16 @@ export default function Home() {
       )}
 
       <div className="relative w-full border-t border-border/50 bg-card px-4 py-12">
-        <div className="mx-auto max-w-7xl text-left">
-          <p className="mb-2 text-sm text-foreground/60" style={bodyFont}>
-            Mistreeous Reflections
-          </p>
-          <p className="text-xs text-foreground/40" style={bodyFont}>
-            Provisional language for pattern, fracture, and reorientation.
-          </p>
-          <p className="mt-4 text-sm text-foreground/60" style={bodyFont}>
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 text-left md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="mb-2 text-sm text-foreground/60" style={bodyFont}>
+              Mistreeous Reflections
+            </p>
+            <p className="text-xs text-foreground/40" style={bodyFont}>
+              Provisional language for pattern, fracture, and reorientation.
+            </p>
+          </div>
+          <p className="text-sm text-foreground/60 md:text-right" style={bodyFont}>
             michaelmistree@mistree.space
           </p>
         </div>
