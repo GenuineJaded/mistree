@@ -270,4 +270,64 @@
       radial-gradient(circle at 76% 58%, rgba(180, 165, 255, 0.75) 0 1.1px, transparent 1.6px),
       radial-gradient(circle at 90% 30%, rgba(255, 255, 255, 0.8) 0 1px, transparent 1.5px);
   }
+
+  .mistree-transition-geometry {
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 88%);
+  }
+
+  .mistree-geometry-shell {
+    filter: drop-shadow(0 0 18px rgba(108, 196, 255, 0.08));
+  }
+
+  .mistree-geometry-ring,
+  .mistree-geometry-triangle,
+  .mistree-geometry-diamond,
+  .mistree-geometry-axis {
+    border-color: rgba(197, 224, 255, 0.14);
+  }
+
+  .mistree-geometry-ring {
+    border: 1px solid rgba(197, 224, 255, 0.12);
+    border-radius: 9999px;
+  }
+
+  .mistree-geometry-triangle::before,
+  .mistree-geometry-diamond::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(197, 224, 255, 0.12);
+  }
+
+  .mistree-geometry-triangle::before {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .mistree-geometry-diamond::before {
+    transform: rotate(45deg) scale(0.9);
+  }
+
+  .mistree-geometry-axis {
+    background: linear-gradient(to right, transparent, rgba(197, 224, 255, 0.14), transparent);
+  }
+
+  .mistree-geometry-axis-horizontal {
+    height: 1px;
+  }
+
+  .mistree-geometry-axis-vertical {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(197, 224, 255, 0.14), transparent);
+  }
+
+  .mistree-geometry-node {
+    width: 0.45rem;
+    height: 0.45rem;
+    margin-left: -0.225rem;
+    margin-top: -0.225rem;
+    border-radius: 9999px;
+    background: rgba(223, 239, 255, 0.82);
+    box-shadow: 0 0 14px rgba(108, 196, 255, 0.24);
+  }
 }

@@ -156,21 +156,16 @@ export default function Home() {
         <div className="mistree-aura mistree-aura-gold absolute bottom-12 right-[10%] h-64 w-64 rounded-full blur-3xl" />
         <div className="mistree-starfield absolute inset-x-0 top-16 h-40 opacity-70" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center fade-in-up">
-          <p
-            className="mb-4 text-sm uppercase tracking-[0.35em] text-foreground/60 md:text-base"
-            style={bodyFont}
-          >
-            Mistreeous Reflections
-          </p>
+        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center fade-in-up">
           <h1
-            className="mb-4 bg-gradient-to-r from-cyan-300 via-violet-300 to-amber-200 bg-clip-text text-5xl font-bold text-transparent md:text-7xl"
+            className="mx-auto max-w-[13ch] bg-gradient-to-r from-cyan-300 via-violet-300 to-amber-200 bg-clip-text text-4xl font-bold leading-[0.95] text-transparent sm:text-5xl md:text-6xl lg:max-w-none lg:text-7xl"
             style={displayFont}
           >
-            Mistree
+            Mistreeous Reflections
           </h1>
+          <div className="h-8 md:h-12" />
           <p
-            className="mb-8 text-xl font-light text-foreground/80 md:text-2xl"
+            className="mb-6 text-xl font-light text-foreground/80 md:text-2xl"
             style={displayFont}
           >
             Seven private instruments for navigating a difficult world
@@ -187,6 +182,20 @@ export default function Home() {
       </div>
 
       <div className="relative w-full overflow-hidden bg-background px-4 py-20">
+        <div className="mistree-transition-geometry absolute inset-x-0 top-[-8rem] flex justify-center opacity-70">
+          <div className="mistree-geometry-shell relative h-[28rem] w-[28rem] md:h-[34rem] md:w-[34rem]">
+            <div className="mistree-geometry-ring absolute inset-[8%]" />
+            <div className="mistree-geometry-ring absolute inset-[20%]" />
+            <div className="mistree-geometry-triangle absolute inset-[18%]" />
+            <div className="mistree-geometry-diamond absolute inset-[30%]" />
+            <div className="mistree-geometry-axis mistree-geometry-axis-horizontal absolute left-[18%] right-[18%] top-1/2" />
+            <div className="mistree-geometry-axis mistree-geometry-axis-vertical absolute bottom-[18%] top-[18%] left-1/2" />
+            <div className="mistree-geometry-node absolute left-1/2 top-[18%]" />
+            <div className="mistree-geometry-node absolute left-[18%] top-1/2" />
+            <div className="mistree-geometry-node absolute right-[18%] top-1/2" />
+            <div className="mistree-geometry-node absolute bottom-[18%] left-1/2" />
+          </div>
+        </div>
         <div className="mistree-aura mistree-aura-violet absolute top-24 -left-24 h-80 w-80 rounded-full blur-3xl" />
         <div className="mistree-aura mistree-aura-cyan absolute right-0 bottom-16 h-72 w-72 rounded-full blur-3xl" />
         <div className="mx-auto max-w-7xl">
