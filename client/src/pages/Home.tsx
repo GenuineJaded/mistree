@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { X } from "lucide-react";
 
 interface Key {
@@ -10,6 +10,78 @@ interface Key {
   fragments: string[];
   image: string;
   order: number;
+}
+
+const keyColors: Record<number, { from: string; to: string; glow: string }> = {
+  1: { from: "from-cyan-400", to: "to-blue-500", glow: "rgba(0,217,255,0.6)" },
+  2: { from: "from-indigo-400", to: "to-violet-500", glow: "rgba(129,140,248,0.6)" },
+  3: { from: "from-amber-400", to: "to-orange-500", glow: "rgba(251,191,36,0.6)" },
+  4: { from: "from-rose-400", to: "to-pink-500", glow: "rgba(251,113,133,0.6)" },
+  5: { from: "from-red-400", to: "to-amber-500", glow: "rgba(248,113,113,0.6)" },
+  6: { from: "from-emerald-400", to: "to-teal-500", glow: "rgba(52,211,153,0.6)" },
+  7: { from: "from-purple-400", to: "to-fuchsia-500", glow: "rgba(192,132,252,0.6)" },
+};
+
+function ParticleField() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animId: number;
+    const particles: { x: number; y: number; vx: number; vy: number; r: number; o: number }[] = [];
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = document.documentElement.scrollHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    for (let i = 0; i < 40; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.5 + 0.5,
+        o: Math.random() * 0.12 + 0.03,
+      });
+    }
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 210, 255, ${p.o})`;
+        ctx.fill();
+      }
+      animId = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none fixed inset-0 z-0"
+    />
+  );
 }
 
 const keys: Key[] = [
@@ -140,7 +212,8 @@ export default function Home() {
   const bodyFont = { fontFamily: '"Lato", sans-serif' };
 
   return (
-    <div className="min-h-screen overflow-hidden bg-background text-foreground">
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      <ParticleField />
       <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -355,7 +428,13 @@ export default function Home() {
                   Take a breath. Let it be a reflection, not a rule.
                 </p>
                 <div className="flex justify-center">
-                  <div className="pulse-glow h-12 w-12 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500" />
+                  <div
+                    className={`h-12 w-12 rounded-full bg-gradient-to-r ${keyColors[selectedKey.id].from} ${keyColors[selectedKey.id].to} cursor-pointer transition-all duration-500 hover:scale-150 hover:shadow-lg`}
+                    style={{
+                      animation: `pulse-glow-custom 3s ease-in-out infinite`,
+                      boxShadow: `0 0 20px ${keyColors[selectedKey.id].glow}`,
+                    }}
+                  />
                 </div>
               </div>
             </div>
