@@ -330,4 +330,19 @@
     background: rgba(223, 239, 255, 0.82);
     box-shadow: 0 0 14px rgba(108, 196, 255, 0.24);
   }
+
+  .mistree-honeycomb {
+    --hc: rgba(200, 220, 255, 0.09);
+    --hc2: rgba(200, 220, 255, 0.05);
+    pointer-events: none;
+    background:
+      linear-gradient(30deg, var(--hc) 12%, transparent 12.5%, transparent 87%, var(--hc) 87.5%, var(--hc)),
+      linear-gradient(150deg, var(--hc) 12%, transparent 12.5%, transparent 87%, var(--hc) 87.5%, var(--hc)),
+      linear-gradient(30deg, var(--hc) 12%, transparent 12.5%, transparent 87%, var(--hc) 87.5%, var(--hc)),
+      linear-gradient(150deg, var(--hc) 12%, transparent 12.5%, transparent 87%, var(--hc) 87.5%, var(--hc)),
+      linear-gradient(60deg, var(--hc2) 25%, transparent 25.5%, transparent 75%, var(--hc2) 75%, var(--hc2)),
+      linear-gradient(60deg, var(--hc2) 25%, transparent 25.5%, transparent 75%, var(--hc2) 75%, var(--hc2));
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  }
 }

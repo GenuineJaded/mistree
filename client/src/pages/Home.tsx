@@ -158,7 +158,7 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 text-center fade-in-up">
           <h1
-            className="mx-auto max-w-[13ch] bg-gradient-to-r from-cyan-300 via-violet-300 to-amber-200 bg-clip-text text-4xl font-bold leading-[0.95] text-transparent sm:text-5xl md:text-6xl lg:max-w-none lg:text-7xl"
+            className="bg-gradient-to-r from-cyan-300 via-violet-300 to-amber-200 bg-clip-text text-3xl font-bold leading-[0.95] text-transparent sm:text-4xl md:text-5xl lg:text-6xl"
             style={displayFont}
           >
             Mistreeous Reflections
@@ -180,6 +180,8 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <div className="mistree-honeycomb h-40 w-full md:h-56" />
 
       <div className="relative w-full overflow-hidden bg-background px-4 py-20">
         <div className="mistree-transition-geometry absolute inset-x-0 top-[-8rem] flex justify-center opacity-70">
