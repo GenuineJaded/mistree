@@ -22,6 +22,24 @@ const keyColors: Record<number, { from: string; to: string; glow: string }> = {
   7: { from: "from-purple-400", to: "to-fuchsia-500", glow: "rgba(192,132,252,0.6)" },
 };
 
+const pdfPool = [
+  "https://www.pdffiller.com/s/X5YjbshAi",
+  "https://www.pdffiller.com/s/aDbz5TB3GS",
+  "https://www.pdffiller.com/s/xPN_JKV0c",
+  "https://www.pdffiller.com/s/vRaTJYMHrr",
+];
+
+function shufflePdfAssignments(): Record<number, string> {
+  const count = 2 + Math.floor(Math.random() * 2); // 2 or 3 active
+  const keyIds = [1, 2, 3, 4, 5, 6, 7].sort(() => Math.random() - 0.5).slice(0, count);
+  const shuffled = [...pdfPool].sort(() => Math.random() - 0.5);
+  const map: Record<number, string> = {};
+  keyIds.forEach((id, i) => {
+    map[id] = shuffled[i % shuffled.length];
+  });
+  return map;
+}
+
 function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -208,6 +226,7 @@ const keys: Key[] = [
 
 export default function Home() {
   const [selectedKey, setSelectedKey] = useState<Key | null>(null);
+  const [activePdfs] = useState(() => shufflePdfAssignments());
   const displayFont = { fontFamily: '"Playfair Display", serif' };
   const bodyFont = { fontFamily: '"Lato", sans-serif' };
 
@@ -428,13 +447,26 @@ export default function Home() {
                   Take a breath. Let it be a reflection, not a rule.
                 </p>
                 <div className="flex justify-center">
-                  <div
-                    className={`h-12 w-12 rounded-full bg-gradient-to-r ${keyColors[selectedKey.id].from} ${keyColors[selectedKey.id].to} cursor-pointer transition-all duration-500 hover:scale-150 hover:shadow-lg`}
-                    style={{
-                      animation: `pulse-glow-custom 3s ease-in-out infinite`,
-                      boxShadow: `0 0 20px ${keyColors[selectedKey.id].glow}`,
-                    }}
-                  />
+                  {activePdfs[selectedKey.id] ? (
+                    <a
+                      href={activePdfs[selectedKey.id]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block h-12 w-12 rounded-full bg-gradient-to-r ${keyColors[selectedKey.id].from} ${keyColors[selectedKey.id].to} transition-all duration-500 hover:scale-150`}
+                      style={{
+                        animation: `pulse-glow-custom 2s ease-in-out infinite`,
+                        boxShadow: `0 0 24px ${keyColors[selectedKey.id].glow}, 0 0 48px ${keyColors[selectedKey.id].glow}`,
+                      }}
+                    />
+                  ) : (
+                    <div
+                      className={`h-12 w-12 rounded-full bg-gradient-to-r ${keyColors[selectedKey.id].from} ${keyColors[selectedKey.id].to} transition-all duration-500 hover:scale-125`}
+                      style={{
+                        animation: `pulse-glow-custom 3s ease-in-out infinite`,
+                        boxShadow: `0 0 20px ${keyColors[selectedKey.id].glow}`,
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
